@@ -57,7 +57,8 @@ Update Method:
 >   ```json
 >   {
 >       "title": " ... ",
->       "subtitle": " ... "
+>       "subtitle": " ... ",
+>       "isJump": true/
 >   }
 >   ```
 >
@@ -150,17 +151,17 @@ Update Method:
 >       {...}
 >   }
 >   ```
->   
->This JSON data structure covers flight information for a total of seven days from Monday to Sunday. Each day can accommodate up to six flights (marked as FLT-1 to FLT-6), with FLT-5 and FLT-6 designated as backup flights for future use.
->   
->For each flight, the following key information needs to be manually entered:
->   
->- Starting Location (STR): Detailed record of the departure location of the flight.
+>
+> This JSON data structure covers flight information for a total of seven days from Monday to Sunday. Each day can accommodate up to six flights (marked as FLT-1 to FLT-6), with FLT-5 and FLT-6 designated as backup flights for future use.
+>
+> For each flight, the following key information needs to be manually entered:
+>
+> - Starting Location (STR): Detailed record of the departure location of the flight.
 >   - Terminus (TER): Clearly identify the destination of the flight.
 >   - Duration (DUR): Accurately record the length of flight time for a flight.
 >   - Comments (COM): Used to record any additional information or explanations related to a flight.
->   
->Each line is written strictly according to the above standards to meet our requirements.
+>
+> Each line is written strictly according to the above standards to meet our requirements.
 
 
 

@@ -10,9 +10,16 @@
 <body>
     <header>
         <div class="center">
-            <img src="../images/logo.svg" alt="logo">
+            <img src="../images/logo.svg" alt="logo" class="logo_img">
             <div class="word">COREISO<br>LOGISTICS</div>
         </div>
+        <script>
+            console.log('Github Static Website of Lufthansa Cargo CL');
+            console.log('Main Version: 1.2.0 Synchronized');
+            document.querySelector('.logo_img').addEventListener('click', function() {  
+                window.location.href = 'https://www.lufthansa-cargo.com/';
+            });
+        </script>
     </header>
 
     <div class="main">
@@ -25,7 +32,7 @@
                 <li class="li3"></li>
                 <li class="li4"></li>  
             </ul>  
-            <div class="comment">We are working intensively to rebook your existing bookings. We would like to expressly ask you to proactively check the current status of your shipment using our <a href="https://www.lufthansa-cargo.com/de/eservices/etracking" target="_blank">eTracking service</a>. </div>
+            <div class="comment">We would like to expressly ask you to proactively check the current status of your shipment using our <a href="https://www.lufthansa-cargo.com/de/eservices/etracking" target="_blank">eTracking service</a>. </div>
         </div>
     </div>
     

@@ -5,6 +5,11 @@ window.onload = function() {
         .then(data => {
             document.querySelector('.announce .title').textContent = data.title;
             document.querySelector('.announce .subtitle').textContent = data.subtitle;
+            if(data.isJump == true){
+                document.querySelector('.announce').addEventListener('click', function() {  
+                    window.location.href = './sources/pages/notice.html';
+                });
+            }
         });
     fetch('./sources/content/carousels/carousel_1.json')
         .then(response => response.json())
