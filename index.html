@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lufthansa Cargo CL</title>
+    <link rel="shortcut icon" href="./sources/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./sources/pages/index.css">
+    <link rel="stylesheet" href="./sources/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="./sources/images/logo.svg" alt="logo" class="logo_img">
+            <div class="word">COREISO<br>LOGISTICS</div>
+            <div class="announce">
+                <div class="title"></div>
+                <div class="subtitle"></div>
+            </div>
+            <script>
+                document.querySelector('.announce').addEventListener('click', function() {  
+                    window.location.href = './sources/pages/notice.html';
+                });
+                document.querySelector('.logo_img').addEventListener('click', function() {  
+                    window.location.href = 'https://www.lufthansa-cargo.com/';
+                });
+            </script>
+        </div>
+    </header>
+    <div class="main">
+        <div class="center">
+            <div id="demo" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="word">
+                            <div class="static_world">Latest news</div>
+                            <div class="separate"></div>
+                            <div class="title carousel1t"></div>
+                            <div class="subtitle carousel1st"></div>
+                        </div>
+                        <img src="" class="d-block carousel1i">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="word">
+                            <div class="static_world">Latest news</div>
+                            <div class="separate"></div>
+                            <div class="title carousel2t"></div>
+                            <div class="subtitle carousel2st"></div>
+                        </div>
+                        <img src="" class="d-block carousel2i">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="word">
+                            <div class="static_world">Latest news</div>
+                            <div class="separate"></div>
+                            <div class="title carousel3t"></div>
+                            <div class="subtitle carousel3st"></div>
+                        </div>
+                        <img src="" class="d-block carousel3i">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="word">
+                            <div class="static_world">Latest news</div>
+                            <div class="separate"></div>
+                            <div class="title carousel4t"></div>
+                            <div class="subtitle carousel4st"></div>
+                        </div>
+                        <img src="" class="d-block carousel4i">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="title">weekly schedule</div>
+                <div class="table-container">  
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Week</th>
+                                <th>Airline</th>
+                                <th>Numbers</th>
+                                <th>Starting</th>
+                                <th>Terminus</th>
+                                <th>Duration</th>
+                                <th>Aircraft</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; 2024 Lufthansa Cargo CL
+        </div>
+    </footer>
+    <script src="./sources/pages/index.js"></script>
+    <script src="./sources/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

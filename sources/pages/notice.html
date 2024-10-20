@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lufthansa Cargo CL</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./notice.css">
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="../images/logo.svg" alt="logo">
+            <div class="word">COREISO<br>LOGISTICS</div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="center">
+            <div class="separate"></div>
+            <div class="title"></div>
+            <ul>  
+                <li class="li1"></li>  
+                <li class="li2"></li>  
+                <li class="li3"></li>
+                <li class="li4"></li>  
+            </ul>  
+            <div class="comment">We are working intensively to rebook your existing bookings. We would like to expressly ask you to proactively check the current status of your shipment using our <a href="https://www.lufthansa-cargo.com/de/eservices/etracking" target="_blank">eTracking service</a>. </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="center">
+            &copy; 2024 Lufthansa Cargo CL
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            fetch('../content/announce/notice.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.main .center .title').textContent = data.title;
+                    document.querySelector('.main .center .li1').textContent = data.li1;
+                    document.querySelector('.main .center .li2').textContent = data.li2;
+                    document.querySelector('.main .center .li3').textContent = data.li3;
+                    document.querySelector('.main .center .li4').textContent = data.li4;
+                });
+        };
+    </script>
+</body>
+</html>
