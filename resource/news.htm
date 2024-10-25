@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAS COREISO</title>
+    <link rel="shortcut icon" href="./images/malaysia-airlines-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./news.css">
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="./images/malaysia-airlines-logo-white.png" alt="">
+            <div class="text" id="hct"></div>
+            <div class="news">NEWS</div>
+            <script>
+                const currentDate_ = new Date();  
+                const currentYear = currentDate_.getFullYear();  
+                const currentMonth = String(currentDate_.getMonth() + 1).padStart(2, '0');
+                let hct = document.querySelector('#hct');
+                hct.textContent = `COREISO ${currentYear}.${currentMonth}`;
+            </script>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="center">
+            <div class="n1"></div>
+            <div class="n2"></div>
+            <div class="n3"></div>
+            <div class="n4"></div>
+        </div>
+        <script>
+            fetch('./json/news_title.json')  
+                .then(response => response.ok ? response.json() : Promise.reject(new Error('Network response was not ok')))  
+                .then(data => {  
+                    document.querySelector('.n1').textContent = data.news1_title;
+                    document.querySelector('.n2').textContent = data.news2_title;
+                    document.querySelector('.n3').textContent = data.news3_title;
+                    document.querySelector('.n4').textContent = data.news4_title;
+                })  
+                .catch(error => {  
+                    console.error('Failed to fetch data:', error);
+                });
+            let n1 = document.querySelector('.n1');  
+            n1.addEventListener('click', function() {  
+                window.location.href = './detail1.htm';
+            });
+            let n2 = document.querySelector('.n2');  
+            n2.addEventListener('click', function() {  
+                window.location.href = './detail2.htm';
+            });
+            let n3 = document.querySelector('.n3');  
+            n3.addEventListener('click', function() {  
+                window.location.href = './detail3.htm';
+            });
+            let n4 = document.querySelector('.n4');  
+            n4.addEventListener('click', function() {  
+                window.location.href = './detail4.htm';
+            });
+        </script>
+    </div>
+
+    <footer>
+        <div class="center">
+            &copy; Malaysia Airlines - Coreiso 2024
+        </div>
+        <script>
+            const currentDate2 = new Date();  
+            const currentYear2 = currentDate2.getFullYear();  
+            let fc = document.querySelector('footer .center');
+            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYear}`;
+            fc.addEventListener('click', function() {  
+                window.location.href = '../index.htm';
+            });
+        </script>
+    </footer>
+</body>
+</html>

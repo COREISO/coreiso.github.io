@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAS COREISO</title>
+    <link rel="shortcut icon" href="./resource/images/malaysia-airlines-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./resource/index.css">
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="./resource/images/malaysia-airlines-logo-white.png" alt="">
+            <div class="text" id="hct"></div>
+            <div class="news">NEWS</div>
+            <script>
+                const currentDate_ = new Date();  
+                const currentYear = currentDate_.getFullYear();  
+                const currentMonth = String(currentDate_.getMonth() + 1).padStart(2, '0');
+                let hct = document.querySelector('#hct');
+                hct.textContent = `COREISO ${currentYear}.${currentMonth}`;
+                let news = document.querySelector('.news');  
+                news.addEventListener('click', function() {  
+                    window.location.href = './resource/news.htm';
+                });
+            </script>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="center">
+            <div class="carousel">  
+                <div class="carousel-images">  
+                    <img src="./resource/images/9M-MRL/50464_1634221936.jpg" class="carousel-image active">
+                    <img src="./resource/images/9M-MRL/11809_1621993330.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRl/20348_1234852949.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/21440_1453145860.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/27020_1051852745.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/34476_1053562583.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/35319_1299504589.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/40972_1424277506.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/47417_1363554136.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/51167_1159996570.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/63027_1086175051.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/63617_1106208897.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/64725_1270476690.jpg" class="carousel-image">
+                    <img src="./resource/images/9M-MRL/86171_1152016005.jpg" class="carousel-image">
+                </div>  
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {  
+                    const images = document.querySelectorAll('.carousel-image');  
+                    let currentIndex = 0;  
+                    const totalImages = images.length;  
+                    function showNextImage() {  
+                        images[currentIndex].classList.remove('active'); 
+                        rand = Math.floor(Math.random() * totalImages);   
+                        currentIndex = (currentIndex + rand) % totalImages;  
+                        images[currentIndex].classList.add('active');  
+                    }  
+                    // Set an interval to change images every x seconds  
+                    setInterval(showNextImage, 20000);  
+                    // Initially show the first image  
+                    images[currentIndex].classList.add('active');  
+                });
+            </script>
+
+            <div class="text">Malaysia Airlines 9M-MRL<br>Boeing 777-2H6(ER)</div>
+
+            <div class="information">
+                <div class="top" id="clickableDiv">Click to view information</div>
+                <script>
+                        document.getElementById('clickableDiv').addEventListener('click', function() {  
+                            let target = document.getElementById('targetSection');  
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        });  
+                </script>
+                <div class="info" id="targetSection">
+                    <div class="up">
+                        <img src="./resource/images/9M-MRL/50464_1634221936.jpg" alt="">
+                        <div>
+                            <span class="sp1">9M-MRL</span><br>
+                            <span class="sp2">Boeing 777-2H6(ER) - 29065, Operated by Malaysia Airlines</span><br>
+                            <span class="sp3">MANUFACTURE DATE:</span>
+                            <span class="sp4">2001-03-01</span><br>
+                            <span class="sp5"></span>
+                            <script>
+                                const currentDate = new Date();
+                                const startDate = new Date(2001, 2, 1);
+                                const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+                                let monthDiff = currentDate.getMonth() - startDate.getMonth();  
+                                let dayDiff = currentDate.getDate() - startDate.getDate(); 
+                                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {  
+                                    yearDiff--;  
+                                    monthDiff += 12;  
+                                    const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);  
+                                    dayDiff += prevMonthDate.getDate() + 1 - startDate.getDate(); 
+                                    dayDiff = 0;
+                                }
+                                let sp5 = document.querySelector('.sp5');  
+                                let result = `Age: ${yearDiff} years ${monthDiff} months`;  
+                                sp5.textContent = result;
+                            </script>
+                        </div>
+                    </div>
+                    <div class="dw">
+                       <div class="s1">
+                        <span class="t1">AIRCRAFT INFO</span>
+                        <div class="separate"></div>
+                        <span class="t2">CN/MSN: 29065</span><br>
+                        <span class="t2">Line No: 329</span><br>
+                        <span class="t2">Registration: 9M-MRL</span><br>
+                        <span class="t2">Airline: Malaysia Airlines</span><br>
+                        <span class="t2">Delivery Date: 2001-03-20</span><br>
+                        <span class="t2">Engine Model: Rolls Royce Trent 892B-17</span><br>
+                        <span class="t2">SELCAL:QR-CL</span><br>
+                        <span class="t2">Status: Active</span>
+                       </div> 
+                       <div class="s2">
+                        <span class="t1">REGISTRATION HISTORY</span>
+                        <div class="separate"></div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>REG</th>
+                                    <th>OPB</th>
+                                    <th>DATE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>9M-MRL</td>
+                                    <td>Malaysia Airlines</td>
+                                    <td>2001-03-20</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>N419PH</td>
+                                    <td>AerCap Holdings N.V.</td>
+                                    <td>2017-02-10</td>
+                                    <td>Inactive</td>
+                                </tr>
+                                <tr>
+                                    <td>N732EI</td>
+                                    <td>Avolon holding Limited</td>
+                                    <td>2020-08-11</td>
+                                    <td>Inactive</td>
+                                </tr>
+                                <tr>
+                                    <td>9M-MRL</td>
+                                    <td>MAS COREISO</td>
+                                    <td>2024-10-20</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="center">
+            &copy; Malaysia Airlines - Coreiso 2024
+        </div>
+        <script>
+            const currentDate2 = new Date();  
+            const currentYear2 = currentDate2.getFullYear();  
+            let fc = document.querySelector('footer .center');
+            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYear}`;
+            fc.addEventListener('click', function() {  
+                window.location.href = './index.htm';
+            });
+        </script>
+    </footer>
+</body>
+</html>
