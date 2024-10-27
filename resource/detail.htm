@@ -34,19 +34,34 @@
             <div class="content"></div>
         </div>
         <script>
-            fetch('./json/news_title.json')  
-                .then(response => response.ok ? response.json() : Promise.reject(new Error('Network response was not ok')))  
-                .then(data => {  
-                    document.querySelector('.title').textContent = data.news1_title;
-                })  
-                .catch(error => {  
+            let m_local = localStorage.getItem('local');  
+            m_URL = './words/'+ m_local +'.txt';
+            fetch(m_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.querySelector('.content').innerHTML = data;
+                })
+                .catch(error => {
                     console.error('Failed to fetch data:', error);
                 });
-            fetch('./json/news_detail1.json')  
-                .then(response => response.ok ? response.json() : Promise.reject(new Error('Network response was not ok')))  
-                .then(data => {  
-                    document.querySelector('.content').innerHTML = data.html_content;
+            
+            let m_LS_KEY = 'title'+ m_local.charAt(m_local.length - 1);
+            fetch('./words/titles.json')  
+                .then(response => {  
+                    if (!response.ok) {  
+                        throw new Error('Network response was not ok');  
+                    }  
+                    return response.json();  
                 })  
+                .then(data => {  
+                    let title = document.querySelector('.main .center .title');
+                    title.textContent = data[m_LS_KEY];
+                })
                 .catch(error => {  
                     console.error('Failed to fetch data:', error);
                 });

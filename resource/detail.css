@@ -23,8 +23,8 @@
     }
     header .center .news{
         height: 30%; width: 20%;
-        border: 0.1vw solid gray;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         margin-left: auto;
         font-family: 'Archivo-B';
         font-size: 2.2vw;
@@ -36,7 +36,7 @@
     }
     header .center .news:hover{
         background-color: #1d5b99;
-        color: white; border: 0.1vw solid #1d5b99;
+        color: white;
     }
 
     .main{
@@ -46,16 +46,17 @@
         width: 88%; height: 95%;
         margin: 0 auto;
         cursor: default;
-        padding: 1vw; border-radius: 1vw;
-        border: 0.1vw solid gray;
+        padding: 1vw; margin-top: 0.5vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         overflow-y: auto; line-height: 2vw;
     }
     .main .center .title{
         font-family: 'Archivo-B';
-        font-size: 2.2vw; line-height: 2.6vw;
+        font-size: 1.8vw; line-height: 2.6vw;
     }
     .main .center .isolate{
-        border-top:0.1vw solid gray ;
+        border-top:0.1vw solid gainsboro ;
         margin-top: 1vw; margin-bottom: 1vw;
     }
     .main .center .content{
@@ -70,10 +71,10 @@
     footer .center{
         width: 90%; height: 100%;
         margin: 0 auto;
-        border: 0.1vw solid gray;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         background-color: white;
-        color: black;
-        border-radius: 0.8vw;
+        color: gray;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,11 +84,9 @@
         transition: all 0.2s ease;
     }
     footer .center:hover{
-        border: 0.1vw solid #1d5b99;
         background-color: #1d5b99; color: white;
     }
 }
-
 @media (max-width: 450px) {
     header{
         width: 100%; height: 20vw;
@@ -113,8 +112,8 @@
     }
     header .center .news{
         height: 30%; width: 20%;
-        border: 0.1vw solid gray;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         margin-left: auto;
         font-family: 'Archivo-B';
         font-size: 4vw;
@@ -126,7 +125,7 @@
     }
     header .center .news:hover{
         background-color: #1d5b99;
-        color: white; border: 0.1vw solid #1d5b99;
+        color: white;
     }
 
     .main{
@@ -136,16 +135,17 @@
         width: 88%; height: 95%;
         margin: 0 auto;
         cursor: default;
-        padding: 1vw; border-radius: 1vw;
-        border: 0.1vw solid gray;
+        padding: 1vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         overflow-y: auto;
     }
     .main .center .title{
         font-family: 'Archivo-B';
-        font-size: 6.2vw; margin-top: 4vw;
+        font-size: 4.4vw; margin-top: 4vw;
     }
     .main .center .isolate{
-        border-top:0.1vw solid gray ;
+        border-top:0.1vw solid gainsboro ;
         margin-top: 4vw; margin-bottom: 3vw;
     }
     .main .center .content{
@@ -161,18 +161,14 @@
     footer .center{
         width: 90%; height: 100%;
         margin: 0 auto;
-        border: 0.1vw solid gray;
-        background-color: white; color: black;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
+        background-color: white; color: gray;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'Archivo-M';
         font-size: 3vw;
         cursor: default;
-    }
-    footer .center:hover{
-        border: 0.1vw solid #1d5b99;
-        background-color: #1d5b99; color: white;
     }
 }

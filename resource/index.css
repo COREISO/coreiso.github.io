@@ -25,8 +25,8 @@
     }
     header .center .news{
         height: 30%; width: 20%;
-        border: 0.1vw solid gray;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         margin-left: auto;
         font-family: 'Archivo-B';
         font-size: 2.2vw;
@@ -38,7 +38,7 @@
     }
     header .center .news:hover{
         background-color: #1d5b99;
-        color: white; border: 0.1vw solid #1d5b99;
+        color: white;
     }
     .main{
         width: 100%; height: 88vw;
@@ -53,10 +53,11 @@
         width: 25vw; height: 5vw;
         top: 38vw; left: 10vw; z-index: 10;
         background-color: rgba(255,255,255,0.5);
-        border-radius: 1vw; padding: 1%; line-height: 2.5vw;
-        font-family: 'Archivo-M'; font-size: 1.8vw;
-        color: black;
+        padding: 1%; line-height: 2.5vw;
+        font-family: 'Archivo-SB'; font-size: 1.8vw;
+        color: white;
         backdrop-filter: blur(1vw);
+        border-radius: 0.25vw;
     }
 
     .main .center .information{
@@ -65,27 +66,27 @@
     .main .center .information .top{
         margin: 0 auto;
         width: 100%; height: 6%;
-        border: 0.1vw solid gray;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'Archivo-B';
-        font-size: 1.8vw; color: #1d5b99;
+        font-size: 1.8vw; color: gray;
         text-transform: uppercase;
         background-color: white;
         margin-top: 2vw;
         cursor: default;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         transition: all 0.2s ease;
     }
     .main .center .information .top:hover{
         background-color: #1d5b99; color: white;
-        border: 0.1vw solid #1d5b99;
     }
     .main .center .information .info{
         width: 100%; height: 84%;
-        border: 0.1vw solid gray;
-        margin-top: 2.5vw; border-radius: 1vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
+        margin-top: 2.5vw;
     }
     .main .center .information .info .up{
         width: 95%; height: 45%;
@@ -94,7 +95,7 @@
         align-items: center;
     }
     .main .center .information .info .up img{
-        height: 80%; border-radius: 0.8vw;
+        height: 80%; border-radius: 0.25vw;
     }
     .main .center .information .info .up div{
         margin-left: 2vw;
@@ -102,7 +103,7 @@
     }
     .main .center .information .info .up div .sp1{
         font-family: 'Archivo-B'; font-size: 2.2vw;
-        color: black;
+        color: #1d5b99;
     }
 
     .main .center .information .info .up div .sp2{
@@ -130,7 +131,7 @@
     .main .center .information .info .dw .s1{
         width: 45%; height: 95%;
         line-height: 1.6vw;
-        overflow-y: auto;
+        overflow-y: auto; color: gray;
     }
     .main .center .information .info .dw .s1 .separate{
         width: 100%; border-top: 0.1vw solid gray;
@@ -143,7 +144,7 @@
         font-family: 'Archivo-M'; font-size: 1vw;
     }
     .main .center .information .info .dw .s2{
-        width: 50%; height: 95%;
+        width: 50%; height: 95%; color: gray;
     }
     .main .center .information .info .dw .s2 .separate{
         width: 100%; border-top: 0.1vw solid gray;
@@ -167,10 +168,10 @@
     footer .center{
         width: 90%; height: 100%;
         margin: 0 auto;
-        border: 0.1vw solid gray;
         background-color: white;
-        color: black;
-        border-radius: 0.8vw;
+        color: gray;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -180,7 +181,6 @@
         transition: all 0.2s ease;
     }
     footer .center:hover{
-        border: 0.1vw solid #1d5b99;
         background-color: #1d5b99; color: white;
     }
 }
@@ -209,8 +209,8 @@
     }
     header .center .news{
         height: 30%; width: 20%;
-        border: 0.1vw solid gray;
-        border-radius: 0.8vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         margin-left: auto;
         font-family: 'Archivo-B';
         font-size: 4vw;
@@ -222,7 +222,7 @@
     }
     header .center .news:hover{
         background-color: #1d5b99;
-        color: white; border: 0.1vw solid #1d5b99;
+        color: white;
     }
     .main{
         width: 100%; height: 180vw;
@@ -237,9 +237,10 @@
         width: 40vw; height: 9vw;
         top: 82.5vw; left: 10vw; z-index: 10;
         background-color: rgba(255,255,255,0.5);
-        border-radius: 1vw; padding: 2%; line-height: 4.4vw;
-        font-family: 'Archivo-M'; font-size: 2.8vw;
-        color: black;
+        padding: 2%; line-height: 4.4vw;
+        border-radius: 0.25vw;
+        font-family: 'Archivo-SB'; font-size: 2.8vw;
+        color: white;
         backdrop-filter: blur(1vw);
     }
 
@@ -266,8 +267,9 @@
 
     .main .center .information .info{
         width: 100%; height: 84%;
-        border: 0.1vw solid gray;
-        margin-top: 2.5vw; border-radius: 1vw;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
+        margin-top: 2.5vw;
     }
     .main .center .information .info .up{
         width: 95%; height: 45%;
@@ -276,7 +278,8 @@
         align-items: center;
     }
     .main .center .information .info .up img{
-        height: 80%; border-radius: 0.8vw;
+        height: 80%; 
+        border-radius: 0.25vw;
     }
     .main .center .information .info .up div{
         margin-left: 2vw;
@@ -284,7 +287,7 @@
     }
     .main .center .information .info .up div .sp1{
         font-family: 'Archivo-B'; font-size: 3.2vw;
-        color: black;
+        color: #1d5b99;
     }
 
     .main .center .information .info .up div .sp2{
@@ -312,7 +315,7 @@
     .main .center .information .info .dw .s1{
         width: 45%; height: 95%;
         line-height: 2.6vw;
-        overflow-y: auto;
+        overflow-y: auto; color: gray;
     }
     .main .center .information .info .dw .s1 .separate{
         width: 100%; border-top: 0.1vw solid gray;
@@ -325,7 +328,7 @@
         font-family: 'Archivo-M'; font-size: 2vw;
     }
     .main .center .information .info .dw .s2{
-        width: 50%; height: 95%; margin-top: -4vw; 
+        width: 50%; height: 95%; margin-top: -4vw; color: gray;
     }
     .main .center .information .info .dw .s2 .separate{
         width: 100%; border-top: 0.1vw solid gray;
@@ -349,18 +352,14 @@
     footer .center{
         width: 90%; height: 100%;
         margin: 0 auto;
-        border: 0.1vw solid gray;
-        background-color: white; color: black;
-        border-radius: 0.8vw;
+        background-color: white; color: gray;
+        box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
+        border-radius: 0.25vw;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'Archivo-M';
         font-size: 3vw;
         cursor: default;
-    }
-    footer .center:hover{
-        border: 0.1vw solid #1d5b99;
-        background-color: #1d5b99; color: white;
     }
 }
