@@ -37,3 +37,6 @@ After sufficient preparation and testing, MAS COREISO plans to officially launch
 <h4>7.Conclusion</h4>
 The cooperation between Malaysia Airlines and COREISO to convert the Boeing 777-200ER passenger plane into a cargo plane and establish a new operating entity, MAS COREISO, is an important measure for both sides to jointly respond to the growing demand in the global air cargo market. With the official operation of the 9M-MRM cargo aircraft, 
 Malaysia Airlines and COREISO will play a more active role in the air cargo market, providing customers with more efficient and reliable cargo services.
+<br><br><br>
+<h4>Attachment: 9M-MRM Cabin Layout, Updated on October 2024</h4>
+<img src="./images/B77B-CabinLayout.png" alt="CabinLayout" style="width: 100%; border: 0.1vw solid black;">
