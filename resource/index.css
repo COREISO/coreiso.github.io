@@ -50,13 +50,13 @@
     }
     .main .center .text{
         position: absolute;
-        width: 25vw; height: 5vw;
+        width: auto; height: 5vw;
         top: 38vw; left: 10vw; z-index: 10;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(1vw);
         padding: 1%; line-height: 2.5vw;
         font-family: 'Archivo-SB'; font-size: 1.8vw;
-        color: white;
-        backdrop-filter: blur(1vw);
+        color: #1d5b99;
         border-radius: 0.25vw;
     }
 
@@ -177,13 +177,9 @@
         justify-content: center;
         font-family: 'Archivo-M';
         font-size: 1vw;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    footer .center:hover{
-        background-color: #1d5b99; color: white;
     }
 }
+
 @media (max-width: 450px) {  
     header{
         width: 100%; height: 20vw;
@@ -213,16 +209,12 @@
         border-radius: 0.25vw;
         margin-left: auto;
         font-family: 'Archivo-B';
-        font-size: 4vw;
+        font-size: 2.6vw;
         padding: 1vw; overflow: hidden;
         background-color: white; color: #1d5b99;
         transition: all 0.2s ease;
         cursor: pointer;
         display: flex; align-items: center; justify-content: center;
-    }
-    header .center .news:hover{
-        background-color: #1d5b99;
-        color: white;
     }
     .main{
         width: 100%; height: 180vw;
@@ -234,14 +226,14 @@
     }
     .main .center .text{
         position: absolute;
-        width: 40vw; height: 9vw;
+        width: auto; height: 9vw;
         top: 82.5vw; left: 10vw; z-index: 10;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(1vw);
         padding: 2%; line-height: 4.4vw;
         border-radius: 0.25vw;
         font-family: 'Archivo-SB'; font-size: 2.8vw;
-        color: white;
-        backdrop-filter: blur(1vw);
+        color: #1d5b99;
     }
 
     .main .center .information{

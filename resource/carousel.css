@@ -5,14 +5,7 @@
     box-shadow: 0 0 0.4vw 0.1vw gainsboro;  
     border-radius: 0.25vw; 
 }  
-  
-.carousel-images {  
-    display: flex;  
-    width: 100%;  
-    height: 100%;  
-    position: relative;  
-}  
-  
+
 .carousel-image {  
     position: absolute;  
     width: 100%;  
@@ -20,7 +13,7 @@
     object-fit: cover;  
     opacity: 0;  
     transition: opacity 0.2s ease;  
-}  
+}
   
 .carousel-image.active {  
     opacity: 1;  

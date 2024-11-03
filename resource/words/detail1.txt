@@ -18,7 +18,7 @@ Operator: Malaysia Airlines<br>
 Manufacturing date: April 11, 2001<br>
 Machine age: 23 years and 6 months (as of the reporting date)<br>
 Delivery date: April 24, 2001<br>
-Engine model: Rolls Royce Trent 892B-17<br>
+Engine model: Rolls-Royce TRENT 892B-17<br>
 SELCAL：QR-CM<br>
 Current status: Active<br><br>
 <h4>4.Modification Plan and Progress</h4>

@@ -6,19 +6,25 @@
     <title>MAS COREISO</title>
     <link rel="shortcut icon" href="./resource/images/malaysia-airlines-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./resource/index.css">
+    <script>
+        logSTR1 = 'Developed by MAS COREISO, Hosted by GitHub Pages'
+        logSTR2 = 'MAS COREISO 2024. All rights reserved'
+        console.log(logSTR1);
+        console.log(logSTR2);
+    </script>
 </head>
 <body>
     <header>
         <div class="center">
             <img src="./resource/images/malaysia-airlines-logo-white.png" alt="">
             <div class="text" id="hct"></div>
-            <div class="news">NEWS</div>
+            <div class="news">NEWSROOM</div>
             <script>
-                const currentDate_ = new Date();  
-                const currentYear = currentDate_.getFullYear();  
-                const currentMonth = String(currentDate_.getMonth() + 1).padStart(2, '0');
+                const currentDateNR = new Date();  
+                const currentYearNR = currentDateNR.getFullYear();  
+                const currentMonthNR = String(currentDateNR.getMonth() + 1).padStart(2, '0');
                 let hct = document.querySelector('#hct');
-                hct.textContent = `COREISO ${currentYear}.${currentMonth}`;
+                hct.textContent = `COREISO ${currentYearNR}.${currentMonthNR}`;
                 let news = document.querySelector('.news');  
                 news.addEventListener('click', function() {  
                     window.location.href = './resource/news.htm';
@@ -61,21 +67,74 @@
                         images[currentIndex].classList.add('active');  
                     }  
                     // Set an interval to change images every x seconds  
-                    setInterval(showNextImage, 10000);  
+                    setInterval(showNextImage, 20000);  
                     // Initially show the first image  
                     images[currentIndex].classList.add('active');  
                 });
             </script>
 
-            <div class="text">Malaysia Airlines 9M-MRM<br>Boeing 777-2H6(ER)</div>
+            <div class="text" id="text" title="RTFN: Real-Time Flight Number">
+                <p>Malaysia Airlines B777-200ER</p>
+                <p class="rtfn_dp"></p>
+            </div>
+            <script>
+                function flightNumberGEN() {
+                    const currentDateFNGEN = new Date();
+                    const month = String(currentDateFNGEN.getMonth() + 1).padStart(2, '0');
+                    const day = String(currentDateFNGEN.getDate()).padStart(2, '0');
+                    return`MH${month}${day}`;
+                }
 
+
+                function RTFN() {
+                    const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];  
+                    const currentDateRTFN = new Date();  
+                    const currentHourRTFN = currentDateRTFN.getHours();  
+                    const currentMinuteRTFN = currentDateRTFN.getMinutes();  
+                    const formattedMinuteRTFN = currentMinuteRTFN < 10 ? '0' + currentMinuteRTFN : currentMinuteRTFN;  
+                    const currentTimeRTFN = `${currentHourRTFN}:${formattedMinuteRTFN}`;  
+                
+                    for (let i = 0; i < daysOfWeek.length; i++) {  
+                        const currentWeek = i;
+                        let str;  
+                        if (currentWeek === 0) { // SUNDAY  
+                            if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
+                                str = flightNumberGEN() + 'A ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
+                                str = flightNumberGEN() + 'B ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
+                                str = flightNumberGEN() + 'C ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else { // 00:00 <= currentHourRTFN < 06:00  
+                                str = flightNumberGEN() + 'D ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            }  
+                        } else {  
+                            if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
+                                str = flightNumberGEN() + 'A ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
+                                str = flightNumberGEN() + 'B ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
+                                str = flightNumberGEN() + 'C ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            } else { // 00:00 <= currentHourRTFN < 06:00  
+                                str = flightNumberGEN() + 'D ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
+                            }  
+                        }  
+                        return str
+                    }
+                }
+                function RTFN_Display() {
+                    let rtfn_dp = document.querySelector('#text .rtfn_dp')
+                    rtfn_dp.textContent = 'RTFN: ' + RTFN()
+                }
+                setInterval(RTFN_Display, 60000);
+                RTFN_Display();
+            </script>
             <div class="information">
                 <div class="top" id="clickableDiv">Click to view information</div>
                 <script>
                     document.getElementById('clickableDiv').addEventListener('click', function() {  
                         let target = document.getElementById('targetSection');  
                         target.scrollIntoView({ behavior: 'smooth' });
-                    });  
+                    });
                 </script>
                 <div class="info" id="targetSection">
                     <div class="up">
@@ -107,14 +166,14 @@
                     </div>
                     <div class="dw">
                        <div class="s1">
-                        <span class="t1">AIRCRAFT INFO</span>
+                        <span class="t1">AIRCRAFT INFORMATION</span>
                         <div class="separate"></div>
                         <span class="t2">CN/MSN: 29066</span><br>
                         <span class="t2">Line No: 336</span><br>
                         <span class="t2">Registration: 9M-MRM</span><br>
                         <span class="t2">Airline: Malaysia Airlines</span><br>
                         <span class="t2">Delivery Date: 2001-04-24</span><br>
-                        <span class="t2">Engine Model: Rolls Royce Trent 892B-17</span><br>
+                        <span class="t2">Engine Model: Rolls-Royce TRENT 892B-17</span><br>
                         <span class="t2">SELCAL:QR-CM</span><br>
                         <span class="t2">Status: Active</span>
                        </div> 
@@ -169,13 +228,10 @@
             &copy; Malaysia Airlines - Coreiso 2024
         </div>
         <script>
-            const currentDate2 = new Date();  
-            const currentYear2 = currentDate2.getFullYear();  
+            const currentDateF = new Date();  
+            const currentYearF = currentDateF.getFullYear();  
             let fc = document.querySelector('footer .center');
-            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYear}`;
-            fc.addEventListener('click', function() {  
-                window.location.href = './index.htm';
-            });
+            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYearF}`;
         </script>
     </footer>
 </body>
