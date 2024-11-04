@@ -86,41 +86,29 @@
                 }
 
 
-                function RTFN() {
+                function RTFN() {  
                     const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];  
                     const currentDateRTFN = new Date();  
+                    const currentDayRTFN = currentDateRTFN.getDay(); // 获取当前是周几（0-6）  
                     const currentHourRTFN = currentDateRTFN.getHours();  
                     const currentMinuteRTFN = currentDateRTFN.getMinutes();  
                     const formattedMinuteRTFN = currentMinuteRTFN < 10 ? '0' + currentMinuteRTFN : currentMinuteRTFN;  
                     const currentTimeRTFN = `${currentHourRTFN}:${formattedMinuteRTFN}`;  
                 
-                    for (let i = 0; i < daysOfWeek.length; i++) {  
-                        const currentWeek = i;
-                        let str;  
-                        if (currentWeek === 0) { // SUNDAY  
-                            if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
-                                str = flightNumberGEN() + 'A ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
-                                str = flightNumberGEN() + 'B ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
-                                str = flightNumberGEN() + 'C ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else { // 00:00 <= currentHourRTFN < 06:00  
-                                str = flightNumberGEN() + 'D ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            }  
-                        } else {  
-                            if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
-                                str = flightNumberGEN() + 'A ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
-                                str = flightNumberGEN() + 'B ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
-                                str = flightNumberGEN() + 'C ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            } else { // 00:00 <= currentHourRTFN < 06:00  
-                                str = flightNumberGEN() + 'D ' + currentTimeRTFN + ' ' + daysOfWeek[currentWeek];  
-                            }  
-                        }  
-                        return str
-                    }
-                }
+                    let prefix;  
+                    if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
+                        prefix = 'A';  
+                    } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
+                        prefix = 'B';  
+                    } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
+                        prefix = 'C';  
+                    } else { // 00:00 <= currentHourRTFN < 06:00  
+                        prefix = 'D';  
+                    }  
+                
+                    return flightNumberGEN() + prefix + ' ' + currentTimeRTFN + ' ' + daysOfWeek[currentDayRTFN];  
+                }  
+                
                 function RTFN_Display() {
                     let rtfn_dp = document.querySelector('#text .rtfn_dp')
                     rtfn_dp.textContent = 'RTFN: ' + RTFN()
