@@ -12,6 +12,7 @@
         <div class="center">
             <img src="./images/malaysia-airlines-logo-white.png" alt="">
             <div class="text" id="hct"></div>
+            <div class="news">PROMPT!</div>
             <script>
                 const currentDate_ = new Date();  
                 const currentYear = currentDate_.getFullYear();  
@@ -26,6 +27,36 @@
         <div class="center">
         </div>
         <script>
+            function containsPromptInsensitive(obj) {  
+                // Helper function to recursively check properties  
+                function check(value) {  
+                    // Convert the value to a string (if it's not already) and to lower case  
+                    const strValue = String(value).toLowerCase();  
+                    
+                    // Check if the string value contains 'prompt' (case insensitive)  
+                    if (strValue.includes('prompt')) {  
+                        return true;  
+                    } else if (Array.isArray(value)) {  
+                        // Iterate over array elements  
+                        for (let item of value) {  
+                            if (check(item)) {  
+                                return true;  
+                            }  
+                        }  
+                    } else if (value !== null && typeof value === 'object') {  
+                        // Iterate over object properties  
+                        for (let key in value) {  
+                            if (value.hasOwnProperty(key) && check(value[key])) {  
+                                return true;  
+                            }  
+                        }  
+                    }  
+                    return false;  
+                }  
+            
+                // Start checking from the root object  
+                return check(obj);  
+            }
             fetch('./words/titles.json')  
                 .then(response => {  
                     if (!response.ok) {  
@@ -48,6 +79,34 @@
                                 localStorage.setItem('local', LS_VAL);
                             });
                         }  
+                    }
+
+                    if(containsPromptInsensitive(data)){
+                        const newsElements = document.querySelectorAll('.main .center div');  
+                        newsElements.forEach(newsElement => {  
+                            newsElement.classList.add('transition-dot2s');
+                            newsElement.addEventListener('mouseenter', () => {  
+                                newsElement.classList.add('hover-effect1');  
+                            });  
+                            newsElement.addEventListener('mouseleave', () => {  
+                                newsElement.classList.remove('hover-effect1');  
+                            });  
+                        }); 
+                    }
+                    if (!containsPromptInsensitive(data)) {
+                        let news = document.querySelector('header .news');
+                        news.style.display = 'none';
+                        const newsElements = document.querySelectorAll('.main .center div');  
+                        newsElements.forEach(newsElement => {  
+                            newsElement.classList.add('transition-dot2s');
+                            newsElement.addEventListener('mouseenter', () => {  
+                                newsElement.classList.add('hover-effect2');  
+                            });  
+                            newsElement.addEventListener('mouseleave', () => {  
+                                newsElement.classList.remove('hover-effect2');  
+                            });  
+                        }); 
+
                     }
                 })
                 .catch(error => {  

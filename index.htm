@@ -29,6 +29,83 @@
                 news.addEventListener('click', function() {  
                     window.location.href = './resource/news.htm';
                 });
+
+                function containsPromptInsensitive(obj) {  
+                    // Helper function to recursively check properties  
+                    function check(value) {  
+                        // Convert the value to a string (if it's not already) and to lower case  
+                        const strValue = String(value).toLowerCase();  
+                        
+                        // Check if the string value contains 'prompt' (case insensitive)  
+                        if (strValue.includes('prompt')) {  
+                            return true;  
+                        } else if (Array.isArray(value)) {  
+                            // Iterate over array elements  
+                            for (let item of value) {  
+                                if (check(item)) {  
+                                    return true;  
+                                }  
+                            }  
+                        } else if (value !== null && typeof value === 'object') {  
+                            // Iterate over object properties  
+                            for (let key in value) {  
+                                if (value.hasOwnProperty(key) && check(value[key])) {  
+                                    return true;  
+                                }  
+                            }  
+                        }  
+                        return false;  
+                    }  
+                
+                    // Start checking from the root object  
+                    return check(obj);  
+                }
+
+                fetch('./resource/words/titles.json')  
+                    .then(response => {
+                        if (!response.ok) {  
+                            throw new Error('Network response was not ok');  
+                        }  
+                        return response.json();  
+                    })
+                    .then(data => { 
+                        if (containsPromptInsensitive(data)) {  
+                            let news = document.querySelector('.news');  
+                            let texts = ['NEWSROOM', 'PROMPT!'];  
+                            let currentIndex = 0;
+                            news.classList.add('border-8b0000');
+                            news.classList.add('font-color-8b0000');
+                            news.classList.add('transition-dot5s');
+                            function switchText() { 
+                                news.classList.add('fade-out');
+                                setTimeout(() => {
+                                    news.textContent = texts[currentIndex];
+                                    news.classList.remove('fade-out');
+                                    currentIndex = (currentIndex + 1) % texts.length;
+                                    setTimeout(switchText, 4000);
+                                }, 500);  
+                            }
+                            switchText();  
+                        }
+                        if (!containsPromptInsensitive(data)) {
+                            const newsElements = document.querySelectorAll('.news');  
+                            newsElements.forEach(newsElement => {  
+                                newsElement.classList.add('transition-dot2s');
+                                newsElement.classList.add('border-1d5b99');
+                                newsElement.classList.add('font-color-1d5b99');
+                                newsElement.addEventListener('mouseenter', () => {  
+                                    newsElement.classList.add('hover-effect');  
+                                });  
+                        
+                                newsElement.addEventListener('mouseleave', () => {  
+                                    newsElement.classList.remove('hover-effect');  
+                                });  
+                            }); 
+                        }  
+                    })  
+                    .catch(error => {  
+                        console.error('Failed to fetch data:', error);  
+                    });
             </script>
         </div>
     </header>
@@ -84,8 +161,6 @@
                     const day = String(currentDateFNGEN.getDate()).padStart(2, '0');
                     return`MH${month}${day}`;
                 }
-
-
                 function RTFN() {  
                     const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];  
                     const currentDateRTFN = new Date();  
@@ -108,7 +183,6 @@
                 
                     return flightNumberGEN() + prefix + ' ' + currentTimeRTFN + ' ' + daysOfWeek[currentDayRTFN];  
                 }  
-                
                 function RTFN_Display() {
                     let rtfn_dp = document.querySelector('#text .rtfn_dp')
                     rtfn_dp.textContent = 'RTFN: ' + RTFN()
