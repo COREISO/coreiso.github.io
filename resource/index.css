@@ -40,7 +40,7 @@
         opacity: 0;
     }
     header .center .news.hover-effect {  
-        background-color: #1d5b99;  
+        background-color: gray;  
         color: white;  
     }
 
@@ -84,7 +84,7 @@
         transition: all 0.2s ease;
     }
     .main .center .information .top:hover{
-        background-color: #1d5b99; color: white;
+        background-color: gray; color: white;
     }
     .main .center .information .info{
         width: 100%; height: 84%;

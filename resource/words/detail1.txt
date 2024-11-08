@@ -2,7 +2,7 @@
 <!-- PLEASE FOLLOW THE FILE NAMING CONVENTION OF "detail+NUMBER" TO NAMING IN SEQUENCE -->
 <!-- &COPY; MAS COREISO 2024 -->
 
-<h4>Report date: 2024/10/14</h4>
+<h4>Report date: 2024/10/10</h4>
 <br>
 <h4>1.Introduction</h4>
 This report aims to outline the cooperation between Malaysia Airlines and COREISO in April 2024, which involves the conversion of a Boeing 777-200ER aircraft (registration number 9M-MRM) owned by Malaysia Airlines into a cargo plane (BCF) and the establishment of a new operating entity, MAS COREISO, to operate the modified aircraft. The following is the detailed information.

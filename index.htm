@@ -18,7 +18,7 @@
         <div class="center">
             <img src="./resource/images/malaysia-airlines-logo-white.png" alt="">
             <div class="text" id="hct"></div>
-            <div class="news">NEWSROOM</div>
+            <div class="news">MESSAGE</div>
             <script>
                 const currentDateNR = new Date();  
                 const currentYearNR = currentDateNR.getFullYear();  
@@ -71,10 +71,10 @@
                     .then(data => { 
                         if (containsPromptInsensitive(data)) {  
                             let news = document.querySelector('.news');  
-                            let texts = ['NEWSROOM', 'PROMPT!'];  
+                            let texts = ['MESSAGE', 'PROMPT!'];  
                             let currentIndex = 0;
-                            news.classList.add('border-8b0000');
-                            news.classList.add('font-color-8b0000');
+                            news.classList.add('border-1d5b99');
+                            news.classList.add('font-color-1d5b99');
                             news.classList.add('transition-dot5s');
                             function switchText() { 
                                 news.classList.add('fade-out');
@@ -91,8 +91,8 @@
                             const newsElements = document.querySelectorAll('.news');  
                             newsElements.forEach(newsElement => {  
                                 newsElement.classList.add('transition-dot2s');
-                                newsElement.classList.add('border-1d5b99');
-                                newsElement.classList.add('font-color-1d5b99');
+                                newsElement.classList.add('border-gray');
+                                newsElement.classList.add('font-color-gray');
                                 newsElement.addEventListener('mouseenter', () => {  
                                     newsElement.classList.add('hover-effect');  
                                 });  
