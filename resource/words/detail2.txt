@@ -2,7 +2,7 @@
 <!-- PLEASE FOLLOW THE FILE NAMING CONVENTION OF "detail+NUMBER" TO NAMING IN SEQUENCE -->
 <!-- &COPY; MAS COREISO 2024 -->
 
-<h4>Report date: 2024/11/07</h4>
+<h4>Report date: 2024/11/08</h4>
 Given the severe challenges of the current fiscal environment, 
 particularly the combined impact of multiple unfavorable factors 
 such as a significant decline in fiscal revenue and sustained increase in consumer spending, 
