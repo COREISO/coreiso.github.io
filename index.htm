@@ -6,19 +6,13 @@
     <title>MAS COREISO</title>
     <link rel="shortcut icon" href="./resource/images/malaysia-airlines-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./resource/index.css">
-    <script>
-        logSTR1 = 'Developed by MAS COREISO, Hosted by GitHub Pages'
-        logSTR2 = 'MAS COREISO 2024. All rights reserved'
-        console.log(logSTR1);
-        console.log(logSTR2);
-    </script>
 </head>
 <body>
     <header>
         <div class="center">
             <img src="./resource/images/malaysia-airlines-logo-white.png" alt="">
             <div class="text" id="hct"></div>
-            <div class="news">MESSAGE</div>
+            <div class="news">ABOUT</div>
             <script>
                 const currentDateNR = new Date();  
                 const currentYearNR = currentDateNR.getFullYear();  
@@ -27,85 +21,10 @@
                 hct.textContent = `COREISO ${currentYearNR}.${currentMonthNR}`;
                 let news = document.querySelector('.news');  
                 news.addEventListener('click', function() {  
-                    window.location.href = './resource/news.htm';
+                    window.location.href = './resource/detail.htm';
                 });
-
-                function containsPromptInsensitive(obj) {  
-                    // Helper function to recursively check properties  
-                    function check(value) {  
-                        // Convert the value to a string (if it's not already) and to lower case  
-                        const strValue = String(value).toLowerCase();  
-                        
-                        // Check if the string value contains 'prompt' (case insensitive)  
-                        if (strValue.includes('prompt')) {  
-                            return true;  
-                        } else if (Array.isArray(value)) {  
-                            // Iterate over array elements  
-                            for (let item of value) {  
-                                if (check(item)) {  
-                                    return true;  
-                                }  
-                            }  
-                        } else if (value !== null && typeof value === 'object') {  
-                            // Iterate over object properties  
-                            for (let key in value) {  
-                                if (value.hasOwnProperty(key) && check(value[key])) {  
-                                    return true;  
-                                }  
-                            }  
-                        }  
-                        return false;  
-                    }  
-                
-                    // Start checking from the root object  
-                    return check(obj);  
-                }
-
-                fetch('./resource/words/titles.json')  
-                    .then(response => {
-                        if (!response.ok) {  
-                            throw new Error('Network response was not ok');  
-                        }  
-                        return response.json();  
-                    })
-                    .then(data => { 
-                        if (containsPromptInsensitive(data)) {  
-                            let news = document.querySelector('.news');  
-                            let texts = ['MESSAGE', 'PROMPT!'];  
-                            let currentIndex = 0;
-                            news.classList.add('border-1d5b99');
-                            news.classList.add('font-color-1d5b99');
-                            news.classList.add('transition-dot5s');
-                            function switchText() { 
-                                news.classList.add('fade-out');
-                                setTimeout(() => {
-                                    news.textContent = texts[currentIndex];
-                                    news.classList.remove('fade-out');
-                                    currentIndex = (currentIndex + 1) % texts.length;
-                                    setTimeout(switchText, 4000);
-                                }, 500);  
-                            }
-                            switchText();  
-                        }
-                        if (!containsPromptInsensitive(data)) {
-                            const newsElements = document.querySelectorAll('.news');  
-                            newsElements.forEach(newsElement => {  
-                                newsElement.classList.add('transition-dot2s');
-                                newsElement.classList.add('border-gray');
-                                newsElement.classList.add('font-color-gray');
-                                newsElement.addEventListener('mouseenter', () => {  
-                                    newsElement.classList.add('hover-effect');  
-                                });  
-                        
-                                newsElement.addEventListener('mouseleave', () => {  
-                                    newsElement.classList.remove('hover-effect');  
-                                });  
-                            }); 
-                        }  
-                    })  
-                    .catch(error => {  
-                        console.error('Failed to fetch data:', error);  
-                    });
+                console.log('Developed by MAS COREISO, Hosted by GitHub Pages');
+                console.log(`MAS COREISO ${currentYearNR}. All rights reserved`);
             </script>
         </div>
     </header>
@@ -176,9 +95,9 @@
                     } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
                         prefix = 'P';  
                     } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
-                        prefix = 'P';  
+                        prefix = 'N';  
                     } else { // 00:00 <= currentHourRTFN < 06:00  
-                        prefix = 'A';  
+                        prefix = 'E';  
                     }  
                 
                     return flightNumberGEN() + prefix + ' ' + currentTimeRTFN + ' ' + daysOfWeek[currentDayRTFN];  
@@ -235,7 +154,7 @@
                         <span class="t2">Registration: 9M-MRM</span><br>
                         <span class="t2">Airline: Malaysia Airlines</span><br>
                         <span class="t2">Delivery Date: 2001-04-24</span><br>
-                        <span class="t2">Engine Model: Rolls-Royce Trent 892B</span><br>
+                        <span class="t2">Engine Model: Rolls-Royce Trent 892B-17</span><br>
                         <span class="t2">SELCAL:QR-CM</span><br>
                         <span class="t2">Status: Active</span>
                        </div> 
@@ -266,7 +185,7 @@
                                 </tr>
                                 <tr>
                                     <td>N752EI</td>
-                                    <td>Avolon holding Limited</td>
+                                    <td>Avolon Holding Limited</td>
                                     <td>2020-08-11</td>
                                     <td>Inactive</td>
                                 </tr>
@@ -286,9 +205,7 @@
     </div>
 
     <footer>
-        <div class="center">
-            &copy; Malaysia Airlines - Coreiso 2024
-        </div>
+        <div class="center"></div>
         <script>
             const currentDateF = new Date();  
             const currentYearF = currentDateF.getFullYear();  

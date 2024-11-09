@@ -13,25 +13,25 @@
             <img src="./images/malaysia-airlines-logo-white.png" alt="">
             <div class="text" id="hct"></div>
             <script>
-                const currentDate_ = new Date();  
-                const currentYear = currentDate_.getFullYear();  
-                const currentMonth = String(currentDate_.getMonth() + 1).padStart(2, '0');
+                const currentDate = new Date();  
+                const currentYear = currentDate.getFullYear();  
+                const currentMonth = String(currentDate.getMonth() + 1).padStart(2, '0');
                 let hct = document.querySelector('#hct');
-                hct.textContent = `MESSAGE ${currentYear}.${currentMonth}`;
+                hct.textContent = `COREISO ${currentYear}.${currentMonth}`;
+                console.log('Developed by MAS COREISO, Hosted by GitHub Pages');
+                console.log(`MAS COREISO ${currentYear}. All rights reserved`);
             </script>
         </div>
     </header>
 
     <div class="main">
         <div class="center">
-            <div class="title"></div>
+            <div class="title">About Malaysia Airlines Coreiso (MAS COREISO)</div>
             <div class="isolate"></div>
             <div class="content"></div>
         </div>
         <script>
-            let m_local = localStorage.getItem('local');  
-            m_URL = './words/'+ m_local +'.txt';
-            fetch(m_URL)
+            fetch('./detail.txt')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -44,34 +44,16 @@
                 .catch(error => {
                     console.error('Failed to fetch data:', error);
                 });
-            
-            let m_LS_KEY = 'title'+ m_local.charAt(m_local.length - 1);
-            fetch('./words/titles.json')  
-                .then(response => {  
-                    if (!response.ok) {  
-                        throw new Error('Network response was not ok');  
-                    }  
-                    return response.json();  
-                })  
-                .then(data => {  
-                    let title = document.querySelector('.main .center .title');
-                    title.textContent = data[m_LS_KEY];
-                })
-                .catch(error => {  
-                    console.error('Failed to fetch data:', error);
-                });
         </script>
     </div>
 
     <footer>
-        <div class="center">
-            &copy; Malaysia Airlines - Coreiso 2024
-        </div>
+        <div class="center"></div>
         <script>
-            const currentDate2 = new Date();  
-            const currentYear2 = currentDate2.getFullYear();  
+            const currentDateF = new Date();  
+            const currentYearF = currentDateF.getFullYear();  
             let fc = document.querySelector('footer .center');
-            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYear}`;
+            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYearF}`;
         </script>
     </footer>
 </body>
