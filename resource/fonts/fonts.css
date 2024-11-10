@@ -1,1 +1,32 @@
-@font-face { font-family: 'Archivo-B'; src: url('./Archivo-Bold.ttf'); } @font-face { font-family: 'Archivo-BL'; src: url('./Archivo-BoldItalic.ttf'); } @font-face { font-family: 'Archivo-L'; src: url('./Archivo-Italic.ttf'); } @font-face { font-family: 'Archivo-M'; src: url('./Archivo-Medium.ttf'); } @font-face { font-family: 'Archivo-ML'; src: url('./Archivo-MediumItalic.ttf'); } @font-face { font-family: 'Archivo-R'; src: url('./Archivo-Regular.ttf'); } @font-face { font-family: 'Archivo-SB'; src: url('./Archivo-SemiBold.ttf'); } @font-face { font-family: 'Archivo-SBL'; src: url('./Archivo-SemiBoldItalic.ttf'); }
+@font-face {
+    font-family: 'Archivo-B';
+    src: url('./Archivo-Bold.ttf');
+}
+@font-face {
+    font-family: 'Archivo-BL';
+    src: url('./Archivo-BoldItalic.ttf');
+}
+@font-face {
+    font-family: 'Archivo-L';
+    src: url('./Archivo-Italic.ttf');
+}
+@font-face {
+    font-family: 'Archivo-M';
+    src: url('./Archivo-Medium.ttf');
+}
+@font-face {
+    font-family: 'Archivo-ML';
+    src: url('./Archivo-MediumItalic.ttf');
+}
+@font-face {
+    font-family: 'Archivo-R';
+    src: url('./Archivo-Regular.ttf');
+}
+@font-face {
+    font-family: 'Archivo-SB';
+    src: url('./Archivo-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Archivo-SBL';
+    src: url('./Archivo-SemiBoldItalic.ttf');
+}

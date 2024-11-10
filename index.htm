@@ -1,78 +1,217 @@
-<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>MAS COREISO</title><link href=./resource/images/malaysia-airlines-icon.png rel="shortcut icon"type=image/x-icon><link href=./resource/index.css rel=stylesheet><header><div class=center><img src=./resource/images/malaysia-airlines-logo-white.png alt=""><div class=text id=hct></div><div class=news>ABOUT</div><script>const currentDateNR = new Date();  
-    const currentYearNR = currentDateNR.getFullYear();  
-    const currentMonthNR = String(currentDateNR.getMonth() + 1).padStart(2, '0');
-    let hct = document.querySelector('#hct');
-    hct.textContent = `COREISO ${currentYearNR}.${currentMonthNR}`;
-    let news = document.querySelector('.news');  
-    news.addEventListener('click', function() {  
-        window.location.href = './resource/detail.htm';
-    });
-    console.log('Developed by MAS COREISO, Hosted by GitHub Pages');
-    console.log(`MAS COREISO ${currentYearNR}. All rights reserved`);</script></div></header><div class=main><div class=center><div class=carousel><div class=carousel-images><img src=./resource/images/MRM/39369_1204038162.jpg class="carousel-image active"> <img src=./resource/images/MRM/15405_1289120892.jpg class=carousel-image> <img src=./resource/images/MRM/16203_1201118595.jpg class=carousel-image> <img src=./resource/images/MRM/19434_1098088826.jpg class=carousel-image> <img src=./resource/images/MRM/21815_1093466710.jpg class=carousel-image> <img src=./resource/images/MRM/30592_1188813977.jpg class=carousel-image> <img src=./resource/images/MRM/31692_1334075306.jpg class=carousel-image> <img src=./resource/images/MRM/45504_1439577825.jpg class=carousel-image> <img src=./resource/images/MRM/47082_1066581840.jpg class=carousel-image> <img src=./resource/images/MRM/47230_1144217120.jpg class=carousel-image> <img src=./resource/images/MRM/50843_1178641589.jpg class=carousel-image> <img src=./resource/images/MRM/66224_1586380348.jpg class=carousel-image> <img src=./resource/images/MRM/83446_1204713084.jpg class=carousel-image> <img src=./resource/images/MRM/89824_1216881783.jpg class=carousel-image> <img src=./resource/images/MRM/94131_1377690821.jpg class=carousel-image> <img src=./resource/images/MRM/55271_1277051953.jpg class=carousel-image></div></div><script>document.addEventListener('DOMContentLoaded', () => {  
-        const images = document.querySelectorAll('.carousel-image');  
-        let currentIndex = 0;  
-        const totalImages = images.length;  
-        function showNextImage() {  
-            images[currentIndex].classList.remove('active'); 
-            rand = Math.floor(Math.random() * totalImages);   
-            currentIndex = (currentIndex + rand) % totalImages;  
-            images[currentIndex].classList.add('active');  
-        }  
-        // Set an interval to change images every x seconds  
-        setInterval(showNextImage, 20000);  
-        // Initially show the first image  
-        images[currentIndex].classList.add('active');  
-    });</script><div class=text id=text title="RTFN: Real-Time Flight Number"><p>Malaysia Airlines B777-200ER<p class=rtfn_dp></div><script>function flightNumberGEN() {
-        const currentDateFNGEN = new Date();
-        const month = String(currentDateFNGEN.getMonth() + 1).padStart(2, '0');
-        const day = String(currentDateFNGEN.getDate()).padStart(2, '0');
-        return`MH${month}${day}`;
-    }
-    function RTFN() {  
-        const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];  
-        const currentDateRTFN = new Date();  
-        const currentDayRTFN = currentDateRTFN.getDay(); // 获取当前是周几（0-6）  
-        const currentHourRTFN = currentDateRTFN.getHours();  
-        const currentMinuteRTFN = currentDateRTFN.getMinutes();  
-        const formattedMinuteRTFN = currentMinuteRTFN < 10 ? '0' + currentMinuteRTFN : currentMinuteRTFN;  
-        const currentTimeRTFN = `${currentHourRTFN}:${formattedMinuteRTFN}`;  
-    
-        let prefix;  
-        if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
-            prefix = 'A';  
-        } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
-            prefix = 'P';  
-        } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
-            prefix = 'N';  
-        } else { // 00:00 <= currentHourRTFN < 06:00  
-            prefix = 'E';  
-        }  
-    
-        return flightNumberGEN() + prefix + ' ' + currentTimeRTFN + ' ' + daysOfWeek[currentDayRTFN];  
-    }  
-    function RTFN_Display() {
-        let rtfn_dp = document.querySelector('#text .rtfn_dp')
-        rtfn_dp.textContent = 'RTFN: ' + RTFN()
-    }
-    setInterval(RTFN_Display, 60000);
-    RTFN_Display();</script><div class=information><div class=top id=clickableDiv>Click to view information</div><script>document.getElementById('clickableDiv').addEventListener('click', function() {  
-            let target = document.getElementById('targetSection');  
-            target.scrollIntoView({ behavior: 'smooth' });
-        });</script><div class=info id=targetSection><div class=up><img src=./resource/images/MRM/16203_1201118595.jpg alt=""><div><span class=sp1>9M-MRM</span><br><span class=sp2>Boeing 777-2H6(ER) - 29066, Operated by Malaysia Airlines</span><br><span class=sp3>MANUFACTURE DATE:</span> <span class=sp4>2001-04-11</span><br><span class=sp5></span><script>const currentDate = new Date();
-                    const startDate = new Date(2001, 3, 11);
-                    const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
-                    let monthDiff = currentDate.getMonth() - startDate.getMonth();  
-                    let dayDiff = currentDate.getDate() - startDate.getDate(); 
-                    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {  
-                        yearDiff--;  
-                        monthDiff += 12;  
-                        const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);  
-                        dayDiff += prevMonthDate.getDate() + 1 - startDate.getDate(); 
-                        dayDiff = 0;
-                    }
-                    let sp5 = document.querySelector('.sp5');  
-                    let result = `Age: ${yearDiff} years ${monthDiff} months`;  
-                    sp5.textContent = result;</script></div></div><div class=dw><div class=s1><span class=t1>AIRCRAFT INFORMATION</span><div class=separate></div><span class=t2>CN/MSN: 29066</span><br><span class=t2>Line No: 336</span><br><span class=t2>Registration: 9M-MRM</span><br><span class=t2>Airline: Malaysia Airlines</span><br><span class=t2>Delivery Date: 2001-04-24</span><br><span class=t2>Engine Model: Rolls-Royce Trent 892B-17</span><br><span class=t2>SELCAL:QR-CM</span><br><span class=t2>Status: Active</span></div><div class=s2><span class=t1>REGISTRATION HISTORY</span><div class=separate></div><table><thead><tr><th>REG<th>OPB<th>DATE<th>STATUS<tr><td>9M-MRM<td>Malaysia Airlines<td>2001-04-24<td>Active<tr><td>N439PH<td>AerCap Holdings N.V.<td>2016-10-20<td>Inactive<tr><td>N752EI<td>Avolon Holding Limited<td>2020-08-11<td>Inactive<tr><td>9M-MRM<td>MAS COREISO<td>2024-04-24<td>Active</table></div></div></div></div></div></div><footer><div class=center></div><script>const currentDateF = new Date();  
-const currentYearF = currentDateF.getFullYear();  
-let fc = document.querySelector('footer .center');
-fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYearF}`;</script></footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAS COREISO</title>
+    <link rel="shortcut icon" href="./resource/images/malaysia-airlines-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./resource/index.css">
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="./resource/images/malaysia-airlines-logo-white.png" alt="">
+            <div class="text" id="hct"></div>
+            <div class="news">ABOUT</div>
+            <script>
+                const currentDateNR = new Date();  
+                const currentYearNR = currentDateNR.getFullYear();  
+                const currentMonthNR = String(currentDateNR.getMonth() + 1).padStart(2, '0');
+                let hct = document.querySelector('#hct');
+                hct.textContent = `COREISO ${currentYearNR}.${currentMonthNR}`;
+                let news = document.querySelector('.news');  
+                news.addEventListener('click', function() {  
+                    window.location.href = './resource/detail.htm';
+                });
+                console.log('Developed by MAS COREISO, Hosted by GitHub Pages');
+                console.log(`MAS COREISO ${currentYearNR}. All rights reserved`);
+            </script>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="center">
+            <div class="carousel">  
+                <div class="carousel-images">  
+                    <img src="./resource/images/MRM/31692_1334075306.jpg" class="carousel-image active">
+                    <img src="./resource/images/MRM/15405_1289120892.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/16203_1201118595.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/19434_1098088826.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/21815_1093466710.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/36982_1475471718.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/39369_1204038162.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/45504_1439577825.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/43947_1526173549.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/47230_1144217120.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/50843_1178641589.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/66224_1586380348.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/83446_1204713084.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/89824_1216881783.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/94131_1377690821.jpg" class="carousel-image">
+                    <img src="./resource/images/MRM/55271_1277051953.jpg" class="carousel-image">
+                </div>  
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {  
+                    const images = document.querySelectorAll('.carousel-image');  
+                    let currentIndex = 0;  
+                    const totalImages = images.length;  
+                    function showNextImage() {  
+                        images[currentIndex].classList.remove('active'); 
+                        rand = Math.floor(Math.random() * totalImages);   
+                        currentIndex = (currentIndex + rand) % totalImages;  
+                        images[currentIndex].classList.add('active');  
+                    }  
+                    // Set an interval to change images every x seconds  
+                    setInterval(showNextImage, 20000);  
+                    // Initially show the first image  
+                    images[currentIndex].classList.add('active');  
+                });
+            </script>
+
+            <div class="text" id="text" title="RTFN: Real-Time Flight Number">
+                <p>Malaysia Airlines B777-200ER</p>
+                <p class="rtfn_dp"></p>
+            </div>
+            <script>
+                function flightNumberGEN() {
+                    const currentDateFNGEN = new Date();
+                    const month = String(currentDateFNGEN.getMonth() + 1).padStart(2, '0');
+                    const day = String(currentDateFNGEN.getDate()).padStart(2, '0');
+                    return`MH${month}${day}`;
+                }
+                function RTFN() {  
+                    const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];  
+                    const currentDateRTFN = new Date();  
+                    const currentDayRTFN = currentDateRTFN.getDay(); // 获取当前是周几（0-6）  
+                    const currentHourRTFN = currentDateRTFN.getHours();  
+                    const currentMinuteRTFN = currentDateRTFN.getMinutes();  
+                    const formattedMinuteRTFN = currentMinuteRTFN < 10 ? '0' + currentMinuteRTFN : currentMinuteRTFN;  
+                    const currentTimeRTFN = `${currentHourRTFN}:${formattedMinuteRTFN}`;  
+                
+                    let prefix;  
+                    if (currentHourRTFN >= 6 && currentHourRTFN < 12) {  
+                        prefix = 'A';  
+                    } else if (currentHourRTFN >= 12 && currentHourRTFN < 18) {  
+                        prefix = 'P';  
+                    } else if (currentHourRTFN >= 18 && currentHourRTFN < 24) {  
+                        prefix = 'N';  
+                    } else { // 00:00 <= currentHourRTFN < 06:00  
+                        prefix = 'E';  
+                    }  
+                
+                    return flightNumberGEN() + prefix + ' ' + currentTimeRTFN + ' ' + daysOfWeek[currentDayRTFN];  
+                }  
+                function RTFN_Display() {
+                    let rtfn_dp = document.querySelector('#text .rtfn_dp')
+                    rtfn_dp.textContent = 'RTFN: ' + RTFN()
+                }
+                setInterval(RTFN_Display, 60000);
+                RTFN_Display();
+            </script>
+            <div class="information">
+                <div class="top" id="clickableDiv">Click to view information</div>
+                <script>
+                    document.getElementById('clickableDiv').addEventListener('click', function() {  
+                        let target = document.getElementById('targetSection');  
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    });
+                </script>
+                <div class="info" id="targetSection">
+                    <div class="up">
+                        <img src="./resource/images/MRM/16203_1201118595.jpg" alt="">
+                        <div>
+                            <span class="sp1">9M-MRM</span><br>
+                            <span class="sp2">Boeing 777-2H6(ER) - 29066, Operated by Malaysia Airlines</span><br>
+                            <span class="sp3">MANUFACTURE DATE:</span>
+                            <span class="sp4">2001-04-11</span><br>
+                            <span class="sp5"></span>
+                            <script>
+                                const currentDate = new Date();
+                                const startDate = new Date(2001, 3, 11);
+                                const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+                                let monthDiff = currentDate.getMonth() - startDate.getMonth();  
+                                let dayDiff = currentDate.getDate() - startDate.getDate(); 
+                                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {  
+                                    yearDiff--;  
+                                    monthDiff += 12;  
+                                    const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);  
+                                    dayDiff += prevMonthDate.getDate() + 1 - startDate.getDate(); 
+                                    dayDiff = 0;
+                                }
+                                let sp5 = document.querySelector('.sp5');  
+                                let result = `Age: ${yearDiff} years ${monthDiff} months`;  
+                                sp5.textContent = result;
+                            </script>
+                        </div>
+                    </div>
+                    <div class="dw">
+                       <div class="s1">
+                        <span class="t1">AIRCRAFT INFORMATION</span>
+                        <div class="separate"></div>
+                        <span class="t2">CN/MSN: 29066</span><br>
+                        <span class="t2">Line No: 336</span><br>
+                        <span class="t2">Registration: 9M-MRM</span><br>
+                        <span class="t2">Airline: Malaysia Airlines</span><br>
+                        <span class="t2">Delivery Date: 2001-04-24</span><br>
+                        <span class="t2">Engine Model: Rolls-Royce Trent 892B-17</span><br>
+                        <span class="t2">SELCAL:QR-CM</span><br>
+                        <span class="t2">Status: Active</span>
+                       </div> 
+                       <div class="s2">
+                        <span class="t1">REGISTRATION HISTORY</span>
+                        <div class="separate"></div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>REG</th>
+                                    <th>OPB</th>
+                                    <th>DATE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>9M-MRM</td>
+                                    <td>Malaysia Airlines</td>
+                                    <td>2001-04-24</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>N439PH</td>
+                                    <td>AerCap Holdings N.V.</td>
+                                    <td>2016-10-20</td>
+                                    <td>Inactive</td>
+                                </tr>
+                                <tr>
+                                    <td>N752EI</td>
+                                    <td>Avolon Holding Limited</td>
+                                    <td>2020-08-11</td>
+                                    <td>Inactive</td>
+                                </tr>
+                                <tr>
+                                    <td>9M-MRM</td>
+                                    <td>MAS COREISO</td>
+                                    <td>2024-04-24</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="center"></div>
+        <script>
+            const currentDateF = new Date();  
+            const currentYearF = currentDateF.getFullYear();  
+            let fc = document.querySelector('footer .center');
+            fc.innerHTML = `&copy; Malaysia Airlines - Coreiso ${currentYearF}`;
+        </script>
+    </footer>
+</body>
+</html>
